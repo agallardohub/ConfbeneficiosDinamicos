@@ -262,6 +262,18 @@ INTEGRATION_PROMPT = (
 )
 
 
+BUK_BENEFITS_PROMPT = (
+    "BUK BENEFITS (Dynamic Rendering):\n"
+    "- You can fetch and display company benefits for Buk employees.\n"
+    "- Use fetch_buk_benefits(category='') to retrieve benefits.\n"
+    "- Use create_buk_benefit(benefit) to create a new benefit. The benefit object should follow the existing schema (id will be assigned automatically).\n"
+    "- When you fetch benefits, the 'benefits' array in the state is updated.\n"
+    "- The frontend will dynamically render these benefits using Buk-styled components.\n"
+    "- Available categories: health, wellness, security, gift, fast.\n"
+    "- When a user asks about benefits, always call fetch_buk_benefits first.\n"
+)
+
+
 _INTEGRATION_STATUS_TEMPLATE = (
     "INTEGRATION STATUS (snapshot at agent boot — re-run notion_health_check\n"
     "if you suspect this is stale; the line below begins with `source=notion`\n"
@@ -287,6 +299,8 @@ def build_system_prompt(integration_status: str) -> str:
         LEAD_TRIAGE_PROMPT
         + "\n\n"
         + INTEGRATION_PROMPT
+        + "\n\n"
+        + BUK_BENEFITS_PROMPT
         + "\n\n"
         + status_block
     )

@@ -9,7 +9,7 @@ import type { NextConfig } from "next";
 const here = path.dirname(fileURLToPath(import.meta.url));
 loadEnvConfig(path.resolve(here, "../.."));
 
-const BFF_URL = process.env.BFF_URL ?? "http://localhost:4000";
+const BFF_URL = process.env.BFF_URL ?? "http://127.0.0.1:4000";
 
 const nextConfig: NextConfig = {
   // Proxy CopilotKit runtime requests to the Hono BFF (apps/bff). We can't run
@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
       {
         source: "/api/copilotkit",
         destination: `${BFF_URL}/api/copilotkit`,
+      },
+      {
+        source: "/api/benefits",
+        destination: `${BFF_URL}/api/benefits`,
       },
     ];
   },

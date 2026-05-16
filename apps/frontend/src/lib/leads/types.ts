@@ -84,6 +84,10 @@ export interface AgentState {
   selectedLeadId: string | null;
   header: { title: string; subtitle: string };
   sync: SyncMeta;
+  benefits?: Benefit[];
+  activeView?: "leads" | "benefits";
+  selectedBenefitId?: number | null;
+  benefitSelections: Record<string, Record<string, any>>;
 }
 
 // Mirrors the Python `NotionHealth` TypedDict in
@@ -98,3 +102,47 @@ export interface NotionHealth {
   missing_props: string[];
   error: string | null;
 }
+
+export interface Benefit {
+  id: number;
+  name: string;
+  benefit_type: string;
+  visibility: string;
+  draft: boolean;
+  billable: boolean;
+  boss_approval: boolean;
+  rrhh_approval: boolean;
+  double_approval: boolean;
+  approval_type: string;
+  description: string;
+  additional_info: string | null;
+  url: string | null;
+  banner: { url: string };
+  favorite: boolean;
+  favorite_banner: { url: string };
+  buk_benefit: boolean;
+  preapproved_benefit: boolean;
+  recurrent: boolean;
+  recurrent_period: string;
+  requests_limit: number | null;
+  hawaii_id: number;
+  created_at?: string;
+  updated_at?: string;
+  points?: number;
+  config?: {
+    type: "size_selector" | "quantity_selector" | "dropdown" | "text_area" | "multi_input";
+    options?: string[];
+    max?: number;
+    min?: number;
+    label?: string;
+    placeholder?: string;
+    fields?: Array<{
+      id: string;
+      type: "text_area" | "dropdown" | "quantity_selector" | "size_selector";
+      label: string;
+      placeholder?: string;
+      options?: string[];
+    }>;
+  };
+}
+

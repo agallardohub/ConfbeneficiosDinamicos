@@ -2,37 +2,37 @@
 @import "tw-animate-css";
 
 :root {
-  --background: #EDEDF5;
-  --foreground: #010507;
+  --background: #f8fafc;
+  --foreground: #1e293b;
   --card: #FFFFFF;
-  --card-foreground: #010507;
-  --primary: #010507;
+  --card-foreground: #2D3748;
+  --primary: #4b5ef9;
   --primary-foreground: #FFFFFF;
-  --secondary: #BEC2FF;
-  --secondary-foreground: #010507;
-  --muted: #F7F7F9;
-  --muted-foreground: #57575B;
-  --accent: #BEC2FF;
-  --accent-foreground: #010507;
-  --destructive: #FA5F67;
+  --secondary: #00d1b2;
+  --secondary-foreground: #4b5ef9;
+  --muted: #64748b;
+  --muted-foreground: #94a3b8;
+  --accent: #f59e0b;
+  --accent-foreground: #FFFFFF;
+  --destructive: #F56565;
   --destructive-foreground: #FFFFFF;
-  --border: #DBDBE5;
+  --border: #e2e8f0;
   --input: #FFFFFF;
-  --ring: rgba(190, 194, 255, 0.6);
-  --chart-1: #BEC2FF;
-  --chart-2: #85ECCE;
-  --chart-3: #3D92E8;
-  --chart-4: #FFAC4D;
-  --chart-5: #FFF388;
-  --radius: 0.75rem;
+  --ring: rgba(75, 94, 249, 0.4);
+  --chart-1: #4b5ef9;
+  --chart-2: #00d1b2;
+  --chart-3: #3182CE;
+  --chart-4: #ED8936;
+  --chart-5: #ECC94B;
+  --radius: 1rem;
   --sidebar: #FFFFFF;
-  --sidebar-foreground: #010507;
-  --sidebar-primary: #010507;
+  --sidebar-foreground: #2D3748;
+  --sidebar-primary: #4b5ef9;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #BEC2FF;
-  --sidebar-accent-foreground: #010507;
-  --sidebar-border: #DBDBE5;
-  --sidebar-ring: rgba(190, 194, 255, 0.6);
+  --sidebar-accent-foreground: #4b5ef9;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: rgba(75, 94, 249, 0.4);
 }
 
 @theme inline {

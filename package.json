@@ -6,8 +6,8 @@
     "apps/*"
   ],
   "scripts": {
-    "dev:infra": "docker compose --project-directory . -f deployment/docker-compose.yml up -d --wait && npm run seed",
-    "dev:infra:down": "docker compose --project-directory . -f deployment/docker-compose.yml down",
+    "dev:infra": "docker compose -f deployment/docker-compose.yml up -d --wait && npm run seed",
+    "dev:infra:down": "docker compose -f deployment/docker-compose.yml down",
     "seed": "bash scripts/seed-default-user.sh",
     "check-env": "bash scripts/check-env.sh",
     "predev": "bash scripts/check-env.sh",

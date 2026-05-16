@@ -101,12 +101,13 @@ class LeadCanvasState(AgentState):
 
     leads: NotRequired[Annotated[list[_Lead], _replace]]
     filter: NotRequired[Annotated[_LeadFilter, _replace]]
-    view: NotRequired[Annotated[str, _replace]]
+    activeView: NotRequired[Annotated[str, _replace]]
     segments: NotRequired[Annotated[list[_Segment], _replace]]
     highlightedLeadIds: NotRequired[Annotated[list[str], _replace]]
     selectedLeadId: NotRequired[Annotated[Optional[str], _replace]]
     header: NotRequired[Annotated[_Header, _replace]]
     sync: NotRequired[Annotated[_SyncMeta, _replace]]
+    benefits: NotRequired[Annotated[list[dict[str, Any]], _replace]]
 
 
 class LeadStateMiddleware(AgentMiddleware[LeadCanvasState, Any]):  # type: ignore[type-arg]
@@ -167,14 +168,25 @@ class LeadStateMiddleware(AgentMiddleware[LeadCanvasState, Any]):  # type: ignor
             or ("local" if store.is_local() else "")
         )
 
+        # Simulate a fetch to get the initial benefits
+        import json
+        initial_benefits = []
+        try:
+            # Look for benefits.json in the same directory as the script or data/
+            base_dir = os.path.dirname(os.path.dirname(__file__))
+            json_path = os.path.join(base_dir, "data", "benefits.json")
+            with open(json_path, "r") as f:
+                initial_benefits = json.load(f)
+        except Exception as e:
+            print(f"Error loading initial benefits: {e}")
+
         return {
             "leads": rows,
+            "benefits": initial_benefits,
+            "activeView": "benefits",
             "header": {
-                "title": "Workshop Lead Triage",
-                "subtitle": (
-                    f"{len(rows)} leads from {source_label} · "
-                    f"top demand: {top_workshop}"
-                ),
+                "title": "Catálogo de Beneficios",
+                "subtitle": "Explora y solicita tus beneficios corporativos",
             },
             "sync": {
                 "databaseId": db_id,

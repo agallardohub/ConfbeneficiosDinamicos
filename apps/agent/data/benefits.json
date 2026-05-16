@@ -1,0 +1,245 @@
+[
+  {
+    "id": 1,
+    "name": "Polera Corporativa Buk",
+    "benefit_type": "gift",
+    "description": "¡Vístete con los colores del equipo! Elige tu talla y recibe tu polera oficial en la oficina.",
+    "banner": {
+      "url": "/packs/media/images/polera.jpg"
+    },
+    "config": {
+      "type": "size_selector",
+      "options": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "label": "Talla"
+    },
+    "points": 50,
+    "buk_benefit": true,
+    "favorite": true
+  },
+  {
+    "id": 2,
+    "name": "Entradas al Cine",
+    "benefit_type": "wellness",
+    "description": "Canjea tus tickets para las mejores películas. Tienes un cupo máximo de 4 por mes.",
+    "banner": {
+      "url": "/packs/media/images/cine.jpg"
+    },
+    "config": {
+      "type": "quantity_selector",
+      "max": 4,
+      "min": 1,
+      "label": "Cantidad de tickets"
+    },
+    "points": 100,
+    "buk_benefit": false,
+    "favorite": true
+  },
+  {
+    "id": 3,
+    "name": "Seguro Complementario",
+    "benefit_type": "b2b",
+    "description": "Elige el plan que mejor se adapte a tus necesidades y las de tu familia.",
+    "banner": {
+      "url": "/packs/media/images/seguro.jpg"
+    },
+    "config": {
+      "type": "dropdown",
+      "options": [
+        "Plan Base (Gratis)",
+        "Plan Familia (+50 pts)",
+        "Plan Senior (+100 pts)"
+      ],
+      "label": "Selecciona tu plan"
+    },
+    "points": 0,
+    "buk_benefit": true
+  },
+  {
+    "id": 4,
+    "name": "BukPass Alimentación",
+    "benefit_type": "fast",
+    "description": "Carga mensual para tus almuerzos. Selecciona tu proveedor preferido.",
+    "banner": {
+      "url": "/packs/media/images/almuerzo.jpg"
+    },
+    "config": {
+      "type": "dropdown",
+      "options": [
+        "Sodexo",
+        "Edenred",
+        "Pluxee"
+      ],
+      "label": "Proveedor"
+    },
+    "points": 300,
+    "buk_benefit": true
+  },
+  {
+    "id": 5,
+    "name": "Kit de Bienvenida",
+    "benefit_type": "gift",
+    "description": "Selecciona el color de tu botella y libreta Buk para tu kit de inicio.",
+    "banner": {
+      "url": "/packs/media/images/kit.jpg"
+    },
+    "config": {
+      "type": "size_selector",
+      "options": [
+        "Azul Buk",
+        "Verde Teal",
+        "Blanco"
+      ],
+      "label": "Color"
+    },
+    "points": 0,
+    "buk_benefit": true
+  },
+  {
+    "id": 6,
+    "name": "Sesión de Masajes",
+    "benefit_type": "wellness",
+    "description": "Reserva tu hora para un masaje descontracturante en la sala de bienestar.",
+    "banner": {
+      "url": "/packs/media/images/masaje.jpg"
+    },
+    "config": {
+      "type": "dropdown",
+      "options": [
+        "Lunes 10:00",
+        "Miércoles 15:00",
+        "Viernes 11:00"
+      ],
+      "label": "Horario"
+    },
+    "points": 150,
+    "buk_benefit": true
+  },
+  {
+    "id": 7,
+    "name": "Día Administrativo",
+    "benefit_type": "security",
+    "description": "Tómate un día libre para trámites personales. Elige el semestre.",
+    "banner": {
+      "url": "/packs/media/images/reloj.jpg"
+    },
+    "config": {
+      "type": "dropdown",
+      "options": [
+        "Primer Semestre",
+        "Segundo Semestre"
+      ],
+      "label": "Periodo"
+    },
+    "points": 0,
+    "buk_benefit": true
+  },
+  {
+    "id": 8,
+    "name": "Cursos Online",
+    "benefit_type": "wellness",
+    "description": "Aprende nuevas habilidades. Selecciona la plataforma que prefieras.",
+    "banner": {
+      "url": "/packs/media/images/cursos.jpg"
+    },
+    "config": {
+      "type": "dropdown",
+      "options": [
+        "Udemy",
+        "Coursera",
+        "Platzi"
+      ],
+      "label": "Plataforma"
+    },
+    "points": 500,
+    "buk_benefit": false
+  },
+  {
+    "id": 9,
+    "name": "Gift Card Supermercado",
+    "benefit_type": "gift",
+    "description": "Canjea tus puntos por una tarjeta de regalo para tus compras.",
+    "banner": {
+      "url": "/packs/media/images/giftcard.jpg"
+    },
+    "config": {
+      "type": "quantity_selector",
+      "max": 5,
+      "min": 1,
+      "label": "Monto ($10.000 x unidad)"
+    },
+    "points": 1000,
+    "buk_benefit": false
+  },
+  {
+    "id": 10,
+    "name": "Suscripción Spotify",
+    "benefit_type": "wellness",
+    "description": "Tu música favorita sin anuncios. Elige el tipo de cuenta.",
+    "banner": {
+      "url": "/packs/media/images/musica.jpg"
+    },
+    "config": {
+      "type": "dropdown",
+      "options": [
+        "Individual",
+        "Duo",
+        "Familiar"
+      ],
+      "label": "Tipo de Cuenta"
+    },
+    "points": 200,
+    "buk_benefit": false
+  },
+  {
+    "category": "gift",
+    "description": "Bolsas personalizadas con tamaño y mensaje.",
+    "fields": [
+      {
+        "label": "Tamaño",
+        "type": "dropdown",
+        "options": [
+          "Pequeña",
+          "Mediana",
+          "Grande"
+        ]
+      },
+      {
+        "label": "Mensaje",
+        "type": "text"
+      }
+    ],
+    "name": "Bolsas",
+    "id": 13
+  },
+  {
+    "category": "gift",
+    "fields": [
+      {
+        "type": "text",
+        "label": "Nombre de la bolsa"
+      },
+      {
+        "label": "Tamaño",
+        "options": [
+          "Pequeño",
+          "Mediano",
+          "Grande"
+        ],
+        "type": "select"
+      }
+    ],
+    "name": "Bolsa",
+    "description": "Bolsa personalizada con tamaño seleccionable.",
+    "id": 14
+  },
+  {
+    "description": "Caja de texto para notas o comentarios.",
+    "name": "Bolsa",
+    "id": 15
+  }
+]
