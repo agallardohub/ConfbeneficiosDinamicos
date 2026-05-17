@@ -1,6 +1,6 @@
 # Portal de Beneficios Dinámicos - Agentic UI
 
-![Buk Benefits Portal](apps/frontend/public/banner.jpg)
+
 
 Bienvenido al **Portal de Beneficios Dinámicos**, una aplicación web inteligente construida para gestionar, visualizar y solicitar beneficios corporativos mediante una interfaz conversacional (Agentic UI).
 
