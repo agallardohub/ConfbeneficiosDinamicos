@@ -14,21 +14,16 @@ const agent = new LangGraphAgent({
   },
 });
 
+import { Hono } from "hono";
 import { logger } from "hono/logger";
 import { cors } from "hono/cors";
+import * as fs from "node:fs";
+import * as path from "node:path";
 
-const app = createCopilotEndpointSingleRoute({
-  basePath: "/api/copilotkit",
-  runtime: new CopilotRuntime({
-    agents: { default: agent },
-  }),
-});
+const app = new Hono();
 
 app.use("*", logger());
 app.use("*", cors({ origin: "*" }));
-
-import * as fs from "node:fs";
-import * as path from "node:path";
 
 // Ruta de salud para verificar que el servidor responde
 app.get("/api/health", (c) => c.json({ status: "ok", runtime: "v2" }));
@@ -36,7 +31,7 @@ app.get("/api/health", (c) => c.json({ status: "ok", runtime: "v2" }));
 // Endpoint para proveer los beneficios actualizados al frontend
 app.get("/api/benefits", (c) => {
   try {
-    const dataPath = path.resolve(__dirname, "../../agent/data/benefits.json");
+    const dataPath = path.resolve(process.cwd(), "../agent/data/benefits.json");
     if (fs.existsSync(dataPath)) {
       const data = fs.readFileSync(dataPath, "utf-8");
       return c.json(JSON.parse(data));
@@ -47,6 +42,15 @@ app.get("/api/benefits", (c) => {
     return c.json({ error: "Failed to load benefits" }, 500);
   }
 });
+
+const copilotApp = createCopilotEndpointSingleRoute({
+  basePath: "/api/copilotkit",
+  runtime: new CopilotRuntime({
+    agents: { default: agent },
+  }),
+});
+
+app.route("/", copilotApp);
 
 const port = Number(process.env.PORT) || 4000;
 

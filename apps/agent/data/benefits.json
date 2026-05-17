@@ -241,5 +241,55 @@
     "description": "Caja de texto para notas o comentarios.",
     "name": "Bolsa",
     "id": 15
+  },
+  {
+    "category": "gift",
+    "description": "Bolsas 3",
+    "name": "Bolsas 3",
+    "id": 16
+  },
+  {
+    "name": "Bolsas 4",
+    "category": "gift",
+    "description": "Bolsas 4",
+    "id": 17
+  },
+  {
+    "name": "Bolsas 5",
+    "description": "Bolsas 5",
+    "category": "gift",
+    "id": 18
+  },
+  {
+    "banner": {
+      "url": "/packs/media/images/ia-support.jpg"
+    },
+    "points": 0,
+    "description": "Obtén ayuda experta de la IA para tus tareas. ¡Paga con un pequeño detalle para el equipo!",
+    "config": {
+      "type": "multi_input",
+      "fields": [
+        {
+          "type": "text_area",
+          "placeholder": "¿En qué puedo ayudarte?",
+          "label": "Detalla tu requerimiento",
+          "id": "req"
+        },
+        {
+          "label": "¿Cómo quieres pagar?",
+          "id": "pay",
+          "type": "dropdown",
+          "options": [
+            "Un Café ☕",
+            "Un Muffin 🧁",
+            "Una Bebida 🥤"
+          ]
+        }
+      ]
+    },
+    "buk_benefit": true,
+    "name": "Soporte Ayudante IA",
+    "benefit_type": "fast",
+    "id": 19
   }
 ]
