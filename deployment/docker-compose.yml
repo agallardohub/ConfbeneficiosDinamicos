@@ -9,9 +9,7 @@
 #
 # Then start the app services on the host:
 #   npm run dev
-
-name: hackathon-intelligence-notion
-
+name: buk-benefits-intelligence
 services:
   # ---------------------------------------------------------------------------
   # Infrastructure
@@ -73,7 +71,7 @@ services:
       AUTH_SECRET: local-dev-secret-must-be-at-least-32-chars
       RUNNER_AUTH_SECRET: dev-runner-secret
       SECRET_KEY_BASE: local-realtime-gateway-secret-key-base-at-least-64-bytes-long-for-dev
-      DEFAULT_ORGANIZATION_ID: hackathon
+      DEFAULT_ORGANIZATION_ID: buk-benefits
       COPILOTKIT_LICENSE_TOKEN: "${COPILOTKIT_LICENSE_TOKEN:-}"
       THREAD_STALE_HOURS: "${THREAD_STALE_HOURS:-3}"
       THREAD_CULL_BATCH_SIZE: "${THREAD_CULL_BATCH_SIZE:-1000}"
